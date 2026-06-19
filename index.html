@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beautifully Unwell — by Arman Sinha</title>
+  <meta name="description" content="Essays, poems, and reflections on psychology, cognitive neuroscience, and what it means to be human.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#" data-goto="home">
+      <span class="nav__brand-name">Beautifully Unwell</span>
+      <span class="nav__brand-by">by Arman Sinha</span>
+    </a>
+    <ul class="nav__links">
+      <li><a class="nav__link" data-page="home" href="#">Home</a></li>
+      <li><a class="nav__link" data-page="about" href="#">About</a></li>
+      <li><a class="nav__link" data-page="archive" href="#">Archive</a></li>
+      <li><a class="nav__link" data-page="poems" href="#">Poems</a></li>
+      <li><a class="nav__link" data-page="videos" href="#">Videos</a></li>
+      <li><a class="nav__link" data-page="books" href="#">Books</a></li>
+      <li><a class="nav__link" data-page="contact" href="#">Contact</a></li>
+    </ul>
+    <button class="nav__toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav overlay -->
+<div class="nav-overlay">
+  <button class="nav-overlay__close" aria-label="Close menu">✕</button>
+  <a class="nav__link" data-page="home" href="#">Home</a>
+  <a class="nav__link" data-page="about" href="#">About</a>
+  <a class="nav__link" data-page="archive" href="#">Archive</a>
+  <a class="nav__link" data-page="poems" href="#">Poems</a>
+  <a class="nav__link" data-page="videos" href="#">Videos</a>
+  <a class="nav__link" data-page="books" href="#">Books</a>
+  <a class="nav__link" data-page="contact" href="#">Contact</a>
+</div>
+
+<!-- ═══════════════════════════════════════
+     HOME PAGE
+═══════════════════════════════════════ -->
+<div class="page active" data-page="home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero__eyebrow fade-in-up">A lifelong body of work</span>
+      <h1 class="hero__title fade-in-up">BEAUTIFULLY<br>UNWELL</h1>
+      <p class="hero__subtitle fade-in-up">
+        Essays, poems, and reflections on psychology,<br>cognitive neuroscience, and what it means to be human.
+      </p>
+      <p class="hero__quote fade-in-up">Questions are often more interesting than answers.</p>
+      <div class="hero__actions fade-in-up">
+        <button class="btn btn--primary" data-goto="archive">Begin Exploring</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Cards -->
+  <section class="section">
+    <div class="container">
+      <span class="section__label reveal">Selected Work</span>
+      <div class="featured-grid">
+
+        <div class="featured-card reveal" data-goto="videos" style="cursor:pointer;">
+          <div class="card__type">Upcoming Video</div>
+          <div class="featured-card__title">The Illusion of Being Different</div>
+          <div class="featured-card__meta">Why the desire to be unique may itself be universal.</div>
+          <div class="card__tags" style="margin-top:1rem;">
+            <span class="tag">Identity</span>
+            <span class="tag">Social comparison</span>
+          </div>
+        </div>
+
+        <div class="featured-card reveal" data-goto="poems" style="cursor:pointer;">
+          <div class="card__type">Featured Poem</div>
+          <div class="featured-card__title">What Is Love?</div>
+          <div class="featured-card__meta">Love is not the heat of a moment, not the reckless language of bodies...</div>
+          <div class="card__tags" style="margin-top:1rem;">
+            <span class="tag">Love</span>
+            <span class="tag">Meaning</span>
+          </div>
+        </div>
+
+        <div class="featured-card reveal">
+          <div class="card__type">Current Reading</div>
+          <div class="reading-list">
+            <div class="reading-item">
+              <div class="reading-item__icon">📗</div>
+              <div class="reading-item__text">
+                <div class="reading-item__title">Behave</div>
+                <div class="reading-item__author">Robert Sapolsky</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-card reveal" onclick="openEssay('consciousness')" style="cursor:pointer;">
+          <div class="card__type">Research Note</div>
+          <div class="featured-card__title">Consciousness and Predictive Processing</div>
+          <div class="featured-card__meta">How the brain constructs reality through prediction rather than passive perception.</div>
+          <div class="card__tags" style="margin-top:1rem;">
+            <span class="tag">Consciousness</span>
+            <span class="tag">Neuroscience</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Question Section -->
+  <section class="section--alt">
+    <div class="container">
+      <div class="question-block reveal">
+        <div class="question-block__label">A Question I'm Currently Thinking About</div>
+        <div class="question-block__text">
+          Can cognitive reappraisal act as a form of prediction updating?
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brief Intro -->
+  <section class="section">
+    <div class="container">
+      <div style="max-width:680px; margin:0 auto; text-align:center;">
+        <span class="section__label reveal">This Place</span>
+        <h2 class="section__title reveal">A digital garden, a philosophy journal,<br>a quiet library.</h2>
+        <p class="prose reveal" style="margin-top:1.5rem; color:var(--c-ink-muted); text-align:center;">
+          This is not a portfolio. It is a lifelong attempt to document what it means to think, feel, and exist.
+          Here you will find essays that sprawl, poems that compress, research notes that connect,
+          and questions that refuse to resolve.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     ABOUT PAGE
+═══════════════════════════════════════ -->
+<div class="page" data-page="about">
+  <div class="container">
+    <div class="page-header">
+      <div class="page-header__label">About</div>
+      <h1 class="page-header__title">From Medicine<br>to Psychology</h1>
+      <p class="page-header__subtitle">A story, not a résumé.</p>
+    </div>
+
+    <!-- ROW 1: Story prose (left) + Forest image (right) -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-4xl); align-items:start; margin-bottom:var(--sp-4xl);">
+
+      <div class="reveal">
+        <div class="prose">
+          <p class="drop-cap">After spending years preparing for NEET, I chose to pivot toward psychology — not because it was a backup plan, but because I became increasingly fascinated by the human mind and behavior. The question that wouldn't leave me alone was not how the body works, but why we think, feel, and act the way we do.</p>
+          <p>I am currently pursuing a B.Sc. in Psychology and hope to specialize in Cognitive Neuroscience in the future. My interest lies at the intersection of science and meaning — in the strange gap between what the brain does and what it feels like to be the brain doing it.</p>
+          <p>This website, Beautifully Unwell, is my attempt to document that inquiry publicly — through essays, poems, research notes, and video essays. It is a lifelong project.</p>
+        </div>
+      </div>
+
+      <!-- Forest image card (right) -->
+      <div class="reveal" style="
+        aspect-ratio: 3/4;
+        background-image: url('images/forest.jpeg');
+        background-size: cover;
+        background-position: center top;
+        border-radius: var(--radius-md);
+        position: relative;
+        overflow: hidden;
+      ">
+        <div style="
+          position: absolute; inset: 0;
+          background: linear-gradient(to top, rgba(10,25,18,0.82) 0%, rgba(10,25,18,0.2) 55%, transparent 100%);
+        "></div>
+        <span style="
+          position: absolute; bottom: var(--sp-xl); left: var(--sp-xl); right: var(--sp-xl);
+          font-family:'Playfair Display', serif;
+          font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+          font-style: italic;
+          font-weight: 600;
+          line-height: 1.7;
+          color: #FAF7F2;
+          text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+        ">"Maybe this is what it means to be awake: to feel everything too much and still choose to stay curious."</span>
+      </div>
+
+    </div>
+
+    <div class="divider--full divider reveal" style="margin-bottom:var(--sp-4xl);"></div>
+
+    <!-- ROW 2: Interests + bird (left) | Timeline (right) -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-4xl); align-items:start; margin-bottom:var(--sp-4xl);">
+
+      <!-- Left: Interests & bird -->
+      <div>
+        <h3 class="reveal" style="font-family:var(--f-display); font-size:var(--t-lg); color:var(--c-ink); margin-bottom:var(--sp-md);">Interests &amp; Curiosities</h3>
+        <div class="interests reveal">
+          <span class="interest-tag">Predictive Processing</span>
+          <span class="interest-tag">Consciousness</span>
+          <span class="interest-tag">Emotion</span>
+          <span class="interest-tag">Human Behavior</span>
+          <span class="interest-tag">Attention</span>
+          <span class="interest-tag">Philosophy of Mind</span>
+          <span class="interest-tag">Dopamine &amp; Motivation</span>
+          <span class="interest-tag">Active Inference</span>
+          <span class="interest-tag">Cognitive Biases</span>
+          <span class="interest-tag">Badminton</span>
+          <span class="interest-tag">Swimming</span>
+          <span class="interest-tag">Listening to Music</span>
+        </div>
+
+        <!-- Origami bird -->
+        <div class="reveal" style="margin-top:var(--sp-2xl);">
+          <img src="images/bird.png"
+            alt="Origami bird"
+            style="width:100%; max-width:260px; opacity:0.5; display:block; mix-blend-mode:multiply;"
+          />
+          <p style="
+            font-family:'Playfair Display', serif;
+            font-size:var(--t-sm);
+            font-style:italic;
+            color:var(--c-ink-muted);
+            line-height:1.7;
+            opacity:0.65;
+            margin-top:var(--sp-sm);
+          ">Maybe it is the layers that make you — you.</p>
+        </div>
+      </div>
+
+      <!-- Right: Timeline -->
+      <div>
+        <span class="section__label reveal">Journey</span>
+        <div class="timeline">
+          <div class="timeline__item reveal">
+            <div class="timeline__year">2024</div>
+            <div class="timeline__content">Years spent preparing for NEET — learning discipline, systems, and the limits of a purely biological model of the human.</div>
+          </div>
+          <div class="timeline__item reveal">
+            <div class="timeline__year">2025</div>
+            <div class="timeline__content">A deliberate pivot toward psychology. The realization that the mind, not just the body, was where the most interesting questions lived.</div>
+          </div>
+          <div class="timeline__item reveal">
+            <div class="timeline__year">2026</div>
+            <div class="timeline__content">Beginning B.Sc. Psychology. Beautifully Unwell launches as a space for public thinking.</div>
+          </div>
+          <div class="timeline__item reveal">
+            <div class="timeline__year">Future</div>
+            <div class="timeline__content">The future is still being written — unplanned, unfinished, and quietly full of possibility. It will go wherever curiosity leads.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Full-width pullquote -->
+    <div class="pullquote reveal">
+      "The goal is not to become an expert. It is to remain genuinely curious — and to document what it looks like to think carefully about hard things."
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     ESSAYS PAGE
+═══════════════════════════════════════ -->
+<div class="page" data-page="essays">
+  <div class="container">
+    <div class="page-header">
+      <div class="page-header__label">Essays</div>
+      <h1 class="page-header__title">Long-form thinking<br>on mind &amp; meaning</h1>
+      <p class="page-header__subtitle">Philosophical and psychological explorations that don't rush to conclusions.</p>
+    </div>
+
+    <!-- Featured Essays -->
+    <div class="essay-card reveal">
+      <div>
+        <div class="essay-card__num">01 — Featured</div>
+        <div class="essay-card__title">The Illusion of Being Different</div>
+        <div class="essay-card__desc">Why the desire to be unique may itself be universal. A look at identity, belonging, and the self-concept that forms when we compare ourselves to others.</div>
+        <div class="card__tags" style="margin-top: 0.75rem;">
+          <span class="tag">Identity</span>
+          <span class="tag">Belonging</span>
+          <span class="tag">Social comparison</span>
+          <span class="tag">Self-concept</span>
+        </div>
+        <div style="margin-top:0.75rem; font-family:var(--f-sans); font-size:var(--t-xs); color:var(--c-ink-muted);">12 min read · Essays</div>
+      </div>
+      <div class="essay-card__arrow">→</div>
+    </div>
+
+    <div class="essay-card reveal">
+      <div>
+        <div class="essay-card__num">02 — Featured</div>
+        <div class="essay-card__title">The Grief of Unlived Lives</div>
+        <div class="essay-card__desc">Not every grief comes from losing something we had. Sometimes it comes from mourning the people we might have become — the paths we didn't take, the selves that never got to exist.</div>
+        <div class="card__tags" style="margin-top: 0.75rem;">
+          <span class="tag">Counterfactual thinking</span>
+          <span class="tag">Meaning</span>
+          <span class="tag">Identity</span>
+          <span class="tag">Regret</span>
+        </div>
+        <div style="margin-top:0.75rem; font-family:var(--f-sans); font-size:var(--t-xs); color:var(--c-ink-muted);">15 min read · Essays</div>
+      </div>
+      <div class="essay-card__arrow">→</div>
+    </div>
+
+    <div class="essay-card reveal">
+      <div>
+        <div class="essay-card__num">03 — Featured</div>
+        <div class="essay-card__title">The Quiet Pain of Emotional Asymmetry</div>
+        <div class="essay-card__desc">Some of the deepest hurts arise not from hatred, but from unequal emotional investment. When you care more than the other person — and both of you know it.</div>
+        <div class="card__tags" style="margin-top: 0.75rem;">
+          <span class="tag">Attachment</span>
+          <span class="tag">Loneliness</span>
+          <span class="tag">Relationships</span>
+          <span class="tag">Emotional reciprocity</span>
+        </div>
+        <div style="margin-top:0.75rem; font-family:var(--f-sans); font-size:var(--t-xs); color:var(--c-ink-muted);">10 min read · Essays</div>
+      </div>
+      <div class="essay-card__arrow">→</div>
+    </div>
+
+    <div class="coming-soon reveal">
+      <div class="coming-soon__title">Coming essays</div>
+      <div class="coming-soon__list">
+        <span class="coming-soon__item">Why We Become Our Own Critics</span>
+        <span class="coming-soon__item">The Mysteriously Ill One</span>
+        <span class="coming-soon__item">Dopamine and Human Desire</span>
+        <span class="coming-soon__item">Why Sadness Feels Comfortable</span>
+        <span class="coming-soon__item">The Self as a Prediction</span>
+        <span class="coming-soon__item">Are We Narrators or Observers?</span>
+        <span class="coming-soon__item">The Stories Our Brains Refuse to Abandon</span>
+        <span class="coming-soon__item">On Becoming Beautifully Unwell</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     RESEARCH NOTES PAGE
+═══════════════════════════════════════ -->
+<div class="page" data-page="research">
+  <div class="container">
+    <div class="page-header">
+      <div class="page-header__label">Research Notes</div>
+      <h1 class="page-header__title">Where ideas connect</h1>
+      <p class="page-header__subtitle">Not finished articles. An intellectual notebook — thinking out loud.</p>
+    </div>
+
+    <div class="notes-grid">
+      <div class="note-card reveal">
+        <div class="note-card__topic">Predictive Processing</div>
+        <div class="note-card__title">Predictive Processing and Negative Bias</div>
+        <div class="note-card__excerpt">The brain is a prediction machine. But why does it so consistently predict worse outcomes than reality tends to deliver? An exploration of how prior beliefs shape perception.</div>
+        <div class="note-connections">
+          <span class="note-connection-tag">→ Attention</span>
+          <span class="note-connection-tag">→ Emotion</span>
+          <span class="note-connection-tag">→ Consciousness</span>
+        </div>
+      </div>
+
+      <div class="note-card reveal">
+        <div class="note-card__topic">Cognitive Science</div>
+        <div class="note-card__title">Cognitive Reappraisal as Error Correction</div>
+        <div class="note-card__excerpt">Reappraisal doesn't just change how we feel about a situation — it may literally update the predictive models the brain uses to interpret similar events in the future.</div>
+        <div class="note-connections">
+          <span class="note-connection-tag">→ Predictive Processing</span>
+          <span class="note-connection-tag">→ Emotion</span>
+        </div>
+      </div>
+
+      <div class="note-card reveal">
+        <div class="note-card__topic">Self &amp; Identity</div>
+        <div class="note-card__title">The Self as a Prediction Model</div>
+        <div class="note-card__excerpt">What if the "self" is not a fixed entity but a running prediction — an ongoing inference the brain makes about who it is based on past patterns? Notes on Karl Friston and the Bayesian self.</div>
+        <div class="note-connections">
+          <span class="note-connection-tag">→ Active Inference</span>
+          <span class="note-connection-tag">→ Consciousness</span>
+        </div>
+      </div>
+
+      <div class="note-card reveal">
+        <div class="note-card__topic">Consciousness</div>
+        <div class="note-card__title">Consciousness and Predictive Processing</div>
+        <div class="note-card__excerpt">Anil Seth's "controlled hallucination" thesis — that perception is a form of prediction — raises profound questions about the nature of conscious experience and its relationship to reality.</div>
+        <div class="note-connections">
+          <span class="note-connection-tag">→ Predictive Processing</span>
+          <span class="note-connection-tag">→ Perception</span>
+        </div>
+      </div>
+
+      <div class="note-card reveal">
+        <div class="note-card__topic">Clinical Psychology</div>
+        <div class="note-card__title">Cognitive-Attentional Syndrome</div>
+        <div class="note-card__excerpt">Adrian Wells' CAS model suggests that it's not negative thoughts themselves that cause suffering, but the way we respond to them — worry, rumination, attention-fixation. Notes on metacognitive therapy.</div>
+        <div class="note-connections">
+          <span class="note-connection-tag">→ Attention</span>
+          <span class="note-connection-tag">→ Emotion regulation</span>
+        </div>
+      </div>
+
+      <div class="note-card reveal">
+        <div class="note-card__topic">Neuroscience</div>
+        <div class="note-card__title">Dopamine: Not What We Think</div>
+        <div class="note-card__excerpt">Dopamine is not the "pleasure chemical." It is a prediction error signal — released when reality is better than expected, suppressed when it's worse. The implications for motivation, addiction, and desire are enormous.</div>
+        <div class="note-connections">
+          <span class="note-connection-tag">→ Motivation</span>
+          <span class="note-connection-tag">→ Behavior</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     POEMS PAGE
+═══════════════════════════════════════ -->
+<div class="page" data-page="poems">
+  <div class="container">
+    <div class="page-header">
+      <div class="page-header__label">Poems</div>
+      <h1 class="page-header__title">Fragments of thoughts<br>that prose could not hold.</h1>
+      <p class="page-header__subtitle">Slower. More intimate. Written in the margins of thinking.</p>
+    </div>
+
+    <div class="grid-3" style="gap: var(--sp-xl);">
+
+      <div class="poem-card reveal" onclick="openPoem(0)" style="cursor:pointer;">
+        <div class="poem-card__title">A Little Paradoxical</div>
+        <div class="poem-card__excerpt">
+          <p>You hate being touched yet your love language is physical touch. You don't wanna be alone yet you turn down almost every plan...</p>
+        </div>
+        <div class="poem-card__meta">2026 · on contradiction</div>
+      </div>
+
+      <div class="poem-card reveal" onclick="openPoem(1)" style="cursor:pointer;">
+        <div class="poem-card__title">To Be the Ideal Paradox</div>
+        <div class="poem-card__excerpt">
+          <p>To wear the fool's cap with a solemn grace, and speak only what the heart cannot unsay...</p>
+        </div>
+        <div class="poem-card__meta">2026 · on becoming</div>
+      </div>
+
+      <div class="poem-card reveal" onclick="openPoem(2)" style="cursor:pointer;">
+        <div class="poem-card__title">Quiet Gravity</div>
+        <div class="poem-card__excerpt">
+          <p>I am not living — just killing time, counting breaths that whisper your name...</p>
+        </div>
+        <div class="poem-card__meta">2026 · on longing</div>
+      </div>
+
+      <div class="poem-card reveal" onclick="openPoem(3)" style="cursor:pointer;">
+        <div class="poem-card__title">What Is Love?</div>
+        <div class="poem-card__excerpt">
+          <p>Love is not the heat of a moment, not the reckless language of bodies, not the long nights of talking until the sun leaks through...</p>
+        </div>
+        <div class="poem-card__meta">2026 · on love</div>
+      </div>
+
+      <div class="poem-card reveal" onclick="openPoem(4)" style="cursor:pointer;">
+        <div class="poem-card__title">Echoes of Your Light</div>
+        <div class="poem-card__excerpt">
+          <p>I hope to be like a calm lake that reflects your kindness and beauty beneath the moonlit sky...</p>
+        </div>
+        <div class="poem-card__meta">2026 · on presence</div>
+      </div>
+
+      <div class="poem-card reveal" onclick="openPoem(5)" style="cursor:pointer;">
+        <div class="poem-card__title">The Ways of Love</div>
+        <div class="poem-card__excerpt">
+          <p>The act of love is not the grand gestures we rehearse, but the quiet choosing — again, and again...</p>
+        </div>
+        <div class="poem-card__meta">2026 · on love &amp; loss</div>
+      </div>
+
+      <div class="poem-card reveal" onclick="openPoem(6)" style="cursor:pointer;">
+        <div class="poem-card__title">Stupid in Love</div>
+        <div class="poem-card__excerpt">
+          <p>Being stupid in love is knowing the truth and choosing you anyway. It's hearing reason knock softly and pretending I didn't hear...</p>
+        </div>
+        <div class="poem-card__meta">2026 · on devotion</div>
+      </div>
+
+      <div class="poem-card reveal" onclick="openPoem(7)" style="cursor:pointer;">
+        <div class="poem-card__title">Life — What Is It About?</div>
+        <div class="poem-card__excerpt">
+          <p>A question without edges, hovering between breath and thought. It unfolds slowly, not as answers, but as moments...</p>
+        </div>
+        <div class="poem-card__meta">2026 · on existence</div>
+      </div>
+
+      <div class="poem-card reveal" onclick="openPoem(8)" style="cursor:pointer;">
+        <div class="poem-card__title">A Mere Thought</div>
+        <div class="poem-card__excerpt">
+          <p>I like being a mere thought that crosses your mind. For long, I desired too much — to be in your heart instead...</p>
+        </div>
+        <div class="poem-card__meta">2026 · on being overlooked</div>
+      </div>
+
+      <div class="poem-card reveal" onclick="openPoem(9)" style="cursor:pointer;">
+        <div class="poem-card__title">What If It Lasts</div>
+        <div class="poem-card__excerpt">
+          <p>What if it last forever — not a promise whispered in the dark, but a choice we keep making even when it's hard...</p>
+        </div>
+        <div class="poem-card__meta">2026 · on possibility</div>
+      </div>
+
+      <div class="poem-card reveal" onclick="openPoem(10)" style="cursor:pointer;">
+        <div class="poem-card__title">The Knight Who Could Not Keep</div>
+        <div class="poem-card__excerpt">
+          <p>I have a sword to protect you but no crown to have you. I walk where shadows learn my name while light was always meant for you...</p>
+        </div>
+        <div class="poem-card__meta">2026 · on sacrifice</div>
+      </div>
+
+      <div class="poem-card reveal" onclick="openPoem(11)" style="cursor:pointer;">
+        <div class="poem-card__title">Two Flames, One Glow</div>
+        <div class="poem-card__excerpt">
+          <p>We fell into an easy rhythm, hearts syncing without trying, like two soft flames leaning closer, learning how to glow together...</p>
+        </div>
+        <div class="poem-card__meta">2026 · on togetherness</div>
+      </div>
+
+      <div class="poem-card reveal" onclick="openPoem(12)" style="cursor:pointer;">
+        <div class="poem-card__title">Even Roses Have Thorns</div>
+        <div class="poem-card__excerpt">
+          <p>Even a rose must be let go if its thorns draw blood. You don't hold onto what hurts you, only to be cut little by little...</p>
+        </div>
+        <div class="poem-card__meta">2026 · on letting go</div>
+      </div>
+
+      <div class="poem-card reveal" onclick="openPoem(13)" style="cursor:pointer;">
+        <div class="poem-card__title">The One Who Was Never Chosen</div>
+        <div class="poem-card__excerpt">
+          <p>She decided to share her secrets with him. He decided to share his life with her. He was home for her. She was the world for him...</p>
+        </div>
+        <div class="poem-card__meta">2026 · on unrequited love</div>
+      </div>
+
+      <div class="poem-card reveal" onclick="openPoem(14)" style="cursor:pointer;">
+        <div class="poem-card__title">Still, I Breathe</div>
+        <div class="poem-card__excerpt">
+          <p>Sometimes it's just easier to give up, to stop pretending strength is something I still have...</p>
+        </div>
+        <div class="poem-card__meta">2026 · on endurance</div>
+      </div>
+
+      <div class="poem-card reveal" onclick="openPoem(15)" style="cursor:pointer;">
+        <div class="poem-card__title">The Sun and the Moon</div>
+        <div class="poem-card__excerpt">
+          <p>Forbidden from the beginning? Or did we meet at the right time in the wrong universe...</p>
+        </div>
+        <div class="poem-card__meta">2026 · on impossible love</div>
+      </div>
+
+    </div>
+
+    <div class="poem-footer reveal">
+      Some thoughts refuse to become essays.<br>
+      Some feelings refuse to become explanations.<br>
+      And so, they become poems.
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ POEM MODAL ═══ -->
+<div id="poem-modal" style="
+  display:none;
+  position:fixed; inset:0; z-index:200;
+  background: rgba(30, 58, 47, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+" onclick="closePoem(event)">
+  <div id="poem-modal-inner" style="
+    background: #FAF7F2;
+    border-radius: 12px;
+    max-width: 620px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 3rem;
+    position: relative;
+    box-shadow: 0 32px 80px rgba(30,58,47,0.2);
+  " onclick="event.stopPropagation()">
+    <button onclick="closePoem()" style="
+      position:absolute; top:1.25rem; right:1.25rem;
+      background:none; border:none; cursor:pointer;
+      font-size:1.25rem; color:#5C7A6A; line-height:1;
+      padding: 4px 8px; border-radius:4px;
+      transition: color 0.2s;
+    " onmouseover="this.style.color='#1E3A2F'" onmouseout="this.style.color='#5C7A6A'">✕</button>
+    <div style="font-family:'Inter',sans-serif; font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:#C8A96E; margin-bottom:0.75rem;" id="modal-label">Poem</div>
+    <h2 id="modal-title" style="font-family:'Playfair Display',serif; font-size:1.75rem; font-weight:500; color:#1E3A2F; margin-bottom:1.5rem; line-height:1.3;"></h2>
+    <div id="modal-body" style="font-family:'Source Serif 4',serif; font-size:1.05rem; line-height:2; color:#2D4A3E; white-space:pre-wrap;"></div>
+    <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid #E2DDD5; font-family:'Inter',sans-serif; font-size:0.75rem; color:#5C7A6A; letter-spacing:0.06em;">by Arman Sinha</div>
+  </div>
+</div>
+
+
+
+
+
+<!-- ═══════════════════════════════════════
+     VIDEOS PAGE
+═══════════════════════════════════════ -->
+<div class="page" data-page="videos">
+  <div class="container">
+    <div class="page-header">
+      <div class="page-header__label">Videos</div>
+      <h1 class="page-header__title">Beautifully Unwell</h1>
+      <p class="page-header__subtitle">Essays on minds, memories, and the strange experience of being alive.</p>
+    </div>
+
+    <!-- Coming Soon block -->
+    <div class="reveal" style="text-align:center; padding: var(--sp-4xl) 0 var(--sp-3xl);">
+      <div style="
+        display:inline-block;
+        border: 1px solid var(--c-border);
+        border-radius: var(--radius-lg);
+        padding: var(--sp-3xl) var(--sp-4xl);
+        background: var(--c-paper);
+        max-width: 560px;
+        width: 100%;
+      ">
+        <div style="font-family:var(--f-sans); font-size:var(--t-xs); letter-spacing:0.2em; text-transform:uppercase; color:var(--c-highlight); margin-bottom:var(--sp-lg);">Coming Soon</div>
+        <div style="font-family:var(--f-display); font-size:var(--t-2xl); font-style:italic; color:var(--c-ink); line-height:1.3; margin-bottom:var(--sp-md);">The channel is<br>on its way.</div>
+        <p style="font-family:var(--f-serif); font-size:var(--t-sm); color:var(--c-ink-muted); line-height:1.8;">
+          Video essays on psychology, cognitive neuroscience, and what it means to be human. Check back soon.
+        </p>
+      </div>
+    </div>
+
+    <!-- Upcoming titles -->
+    <div style="max-width: 560px; margin: 0 auto;">
+      <div style="font-family:var(--f-sans); font-size:var(--t-xs); letter-spacing:0.15em; text-transform:uppercase; color:var(--c-ink-muted); margin-bottom:var(--sp-lg); text-align:center;">Upcoming</div>
+
+      <div class="reveal" style="
+        display:flex; align-items:center; gap:var(--sp-lg);
+        padding: var(--sp-lg) 0;
+        border-bottom: 1px solid var(--c-border-soft);
+      ">
+        <div style="
+          width:56px; height:56px; flex-shrink:0;
+          background: linear-gradient(135deg, var(--c-ink), var(--c-accent));
+          border-radius: var(--radius);
+          display:flex; align-items:center; justify-content:center;
+          font-family:var(--f-sans); font-size:10px; color:rgba(250,247,242,0.5); letter-spacing:0.06em; text-transform:uppercase;
+        ">Soon</div>
+        <div>
+          <div style="font-family:var(--f-display); font-size:var(--t-md); font-style:italic; color:var(--c-ink); margin-bottom:2px;">The Grief of Unlived Lives</div>
+          <div style="font-family:var(--f-sans); font-size:var(--t-xs); color:var(--c-ink-muted); letter-spacing:0.04em;">Identity · 8–10 min</div>
+        </div>
+      </div>
+
+      <div class="reveal" style="
+        display:flex; align-items:center; gap:var(--sp-lg);
+        padding: var(--sp-lg) 0;
+        border-bottom: 1px solid var(--c-border-soft);
+      ">
+        <div style="
+          width:56px; height:56px; flex-shrink:0;
+          background: linear-gradient(135deg, var(--c-accent), #2D4A3E);
+          border-radius: var(--radius);
+          display:flex; align-items:center; justify-content:center;
+          font-family:var(--f-sans); font-size:10px; color:rgba(250,247,242,0.5); letter-spacing:0.06em; text-transform:uppercase;
+        ">Soon</div>
+        <div>
+          <div style="font-family:var(--f-display); font-size:var(--t-md); font-style:italic; color:var(--c-ink); margin-bottom:2px;">The Quiet Pain of Emotional Asymmetry</div>
+          <div style="font-family:var(--f-sans); font-size:var(--t-xs); color:var(--c-ink-muted); letter-spacing:0.04em;">Relationships · 8–10 min</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     BOOKS PAGE
+═══════════════════════════════════════ -->
+<div class="page" data-page="books">
+  <div class="container">
+    <div class="page-header">
+      <div class="page-header__label">Books</div>
+      <h1 class="page-header__title">A Personal Library</h1>
+      <p class="page-header__subtitle">The books that have shaped how I think about mind, behavior, and existence.</p>
+    </div>
+
+    <span class="section__label reveal">Currently Reading</span>
+    <div class="books-grid" style="margin-bottom: var(--sp-3xl);">
+
+      <div class="book-card reveal">
+        <div class="book-card__cover" style="background:linear-gradient(160deg, #1E3A2F 0%, #3D6B52 100%); background-image:url('images/book-behave.jpeg'); background-size:cover; background-position:center;">
+          <span style="display:none;">Behave</span>
+        </div>
+        <div class="book-card__title">Behave</div>
+        <div class="book-card__author">Robert Sapolsky</div>
+        <span class="book-card__status">Currently Reading</span>
+      </div>
+
+    </div>
+
+    <span class="section__label reveal">To Be Read</span>
+    <div class="books-grid" style="margin-bottom: var(--sp-3xl);">
+
+      <div class="book-card reveal">
+        <div class="book-card__cover" style="background:linear-gradient(160deg, #2D4A3E 0%, #1E3A2F 100%); background-image:url('images/book-determined.jpeg'); background-size:cover; background-position:center;">
+          <span style="display:none;">Determined</span>
+        </div>
+        <div class="book-card__title">Determined</div>
+        <div class="book-card__author">Robert Sapolsky</div>
+        <span class="book-card__status">To Be Read</span>
+      </div>
+
+      <div class="book-card reveal">
+        <div class="book-card__cover" style="background:linear-gradient(160deg, #5A8A6B 0%, #2D4A3E 100%); background-image:url('images/book-predictive.jpeg'); background-size:cover; background-position:center;">
+          <span style="display:none;">The Predictive Mind</span>
+        </div>
+        <div class="book-card__title">The Predictive Mind</div>
+        <div class="book-card__author">Jakob Hohwy</div>
+        <span class="book-card__status">To Be Read</span>
+      </div>
+
+      <div class="book-card reveal">
+        <div class="book-card__cover" style="background:linear-gradient(160deg, #C8A96E 0%, #8B6914 100%); background-image:url('images/book-thinking.jpeg'); background-size:cover; background-position:center;">
+          <span style="display:none;">Thinking, Fast and Slow</span>
+        </div>
+        <div class="book-card__title">Thinking, Fast and Slow</div>
+        <div class="book-card__author">Daniel Kahneman</div>
+        <span class="book-card__status">To Be Read</span>
+      </div>
+
+      <div class="book-card reveal">
+        <div class="book-card__cover" style="background:linear-gradient(160deg, #3D5A7A 0%, #1E2D3A 100%); background-image:url('images/book-incognito.jpeg'); background-size:cover; background-position:center;">
+          <span style="display:none;">Incognito</span>
+        </div>
+        <div class="book-card__title">Incognito</div>
+        <div class="book-card__author">David Eagleman</div>
+        <span class="book-card__status">To Be Read</span>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     ARCHIVE PAGE
+═══════════════════════════════════════ -->
+<div class="page" data-page="archive">
+  <div class="container">
+    <div class="page-header" style="border-bottom:none; margin-bottom:var(--sp-md); padding-bottom:0;">
+      <div class="page-header__label">Archive</div>
+      <h1 class="page-header__title">Everything, in one place.</h1>
+      <p class="page-header__subtitle">A growing collection of research notes and reflections.</p>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:0;">
+
+      <div class="essay-card archive-item reveal" data-tags="research consciousness" onclick="openEssay('consciousness')" style="cursor:pointer;">
+        <div>
+          <div class="essay-card__num">Research Note</div>
+          <div class="essay-card__title">Consciousness and Predictive Processing</div>
+          <div class="essay-card__desc">An exploration of how the brain constructs reality through prediction rather than passive perception.</div>
+          <div class="card__tags" style="margin-top:0.5rem;"><span class="tag">Consciousness</span><span class="tag">Predictive Processing</span><span class="tag">Neuroscience</span></div>
+        </div>
+        <div class="essay-card__arrow">→</div>
+      </div>
+
+      <div class="essay-card archive-item reveal" data-tags="research emotion" onclick="openReflection()" style="cursor:pointer; border-bottom:none; border-top:none;">
+        <div>
+          <div class="essay-card__num">Reflection</div>
+          <div class="essay-card__title">Cognitive Reappraisal and Error Correction</div>
+          <div class="essay-card__desc">Revising the mind's predictions — on how the meanings we assign to events shape the emotions we feel.</div>
+          <div class="card__tags" style="margin-top:0.5rem;"><span class="tag">Emotion</span><span class="tag">Predictive Processing</span><span class="tag">Metacognition</span></div>
+        </div>
+        <div class="essay-card__arrow" style="opacity:0.3;">→</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ESSAY MODAL ═══ -->
+<div id="essay-modal" style="
+  display:none;
+  position:fixed; inset:0; z-index:200;
+  background: rgba(30, 58, 47, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+" onclick="closeEssay(event)">
+  <div id="essay-modal-inner" style="
+    background: #FAF7F2;
+    border-radius: 12px;
+    max-width: 680px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    padding: 3.5rem;
+    position: relative;
+    box-shadow: 0 32px 80px rgba(30,58,47,0.2);
+  " onclick="event.stopPropagation()">
+    <button onclick="document.getElementById('essay-modal').style.display='none'; document.body.style.overflow='';" style="
+      position:absolute; top:1.25rem; right:1.25rem;
+      background:none; border:none; cursor:pointer;
+      font-size:1.25rem; color:#5C7A6A; line-height:1;
+      padding: 4px 8px; border-radius:4px;
+      transition: color 0.2s;
+    " onmouseover="this.style.color='#1E3A2F'" onmouseout="this.style.color='#5C7A6A'">✕</button>
+
+    <div style="font-family:'Inter',sans-serif; font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:#C8A96E; margin-bottom:0.75rem;">Research Note · Arman Sinha</div>
+    <h2 style="font-family:'Playfair Display',serif; font-size:1.9rem; font-weight:500; color:#1E3A2F; margin-bottom:0.5rem; line-height:1.25;">Consciousness and Predictive Processing</h2>
+    <p style="font-family:'Source Serif 4',serif; font-size:1rem; font-style:italic; color:#5C7A6A; margin-bottom:2rem; line-height:1.6;">An exploration of how the brain constructs reality through prediction rather than passive perception.</p>
+
+    <div style="font-family:'Source Serif 4',serif; font-size:1.05rem; line-height:1.95; color:#2D4A3E;">
+
+      <p style="margin-bottom:1.4rem;">For much of human history, perception was understood as a passive process in which the brain simply received information from the external world. Yet, the emerging framework of predictive processing suggests something far more intriguing: the brain is not merely a recorder of reality but an active constructor of it.</p>
+
+      <p style="margin-bottom:1.4rem;">Human beings appear to be prediction machines. Rather than waiting for sensory information to arrive and then interpreting it, the brain continuously generates models about the world and compares these expectations with incoming signals. What we experience as reality is therefore not a direct copy of the external environment, but the brain's best and most useful guess about it. Learning occurs through prediction errors — the discrepancies between expectation and experience — which force these internal models to be revised.</p>
+
+      <p style="margin-bottom:1.4rem;">This perspective extends beyond perception. Emotions, beliefs, memories, and even the sense of self may be understood as predictions constructed across different levels of the mind. Consciousness itself can be viewed not as a detached observer, but as an evolving model through which the brain makes sense of its own activity and its relationship with the world.</p>
+
+      <p style="margin-bottom:1.4rem;">Metacognition adds another layer to this process. Humans possess the remarkable ability to examine their own thoughts, question their interpretations, and deliberately revise the predictions through which they understand themselves and others. Cognitive reappraisal, reflection, and self-questioning may therefore represent higher-order forms of prediction updating rather than entirely separate psychological processes.</p>
+
+      <p style="margin-bottom:2rem;">From this perspective, much of human experience emerges from the continual interaction between expectation and error, stability and revision, prediction and surprise. To understand the mind, then, may not require asking how the brain passively perceives reality, but how it actively constructs it.</p>
+
+      <div style="border-top:1px solid #E2DDD5; padding-top:1.5rem; margin-top:0.5rem;">
+        <p style="font-family:'Inter',sans-serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:#C8A96E; margin-bottom:0.75rem;">Footnote</p>
+        <p style="font-size:0.95rem; color:#5C7A6A; line-height:1.85; font-style:italic;">If perception, emotion, and thought are shaped by predictions, then many of our fears, assumptions, and biases may also be inherited or repeatedly reinforced predictions rather than objective truths. Among these, the negativity bias appears especially significant, as the brain often prioritizes potential threats over neutral or positive information. A continuing challenge of metacognition is therefore learning to recognize these deeply ingrained predictions and becoming capable of updating them when they no longer reflect reality.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- ═══ REFLECTION MODAL ═══ -->
+<div id="reflection-modal" style="
+  display:none;
+  position:fixed; inset:0; z-index:200;
+  background: rgba(30, 58, 47, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+" onclick="closeReflection(event)">
+  <div id="reflection-modal-inner" style="
+    background: #FAF7F2;
+    border-radius: 12px;
+    max-width: 680px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    padding: 3.5rem;
+    position: relative;
+    box-shadow: 0 32px 80px rgba(30,58,47,0.2);
+  " onclick="event.stopPropagation()">
+    <button onclick="document.getElementById('reflection-modal').style.display='none'; document.body.style.overflow='';" style="
+      position:absolute; top:1.25rem; right:1.25rem;
+      background:none; border:none; cursor:pointer;
+      font-size:1.25rem; color:#5C7A6A; line-height:1;
+      padding: 4px 8px; border-radius:4px;
+      transition: color 0.2s;
+    " onmouseover="this.style.color='#1E3A2F'" onmouseout="this.style.color='#5C7A6A'">✕</button>
+
+    <div style="font-family:'Inter',sans-serif; font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:#C8A96E; margin-bottom:0.75rem;">Reflection · Arman Sinha</div>
+    <h2 style="font-family:'Playfair Display',serif; font-size:1.9rem; font-weight:500; color:#1E3A2F; margin-bottom:0.5rem; line-height:1.25;">Cognitive Reappraisal and Error Correction</h2>
+    <p style="font-family:'Source Serif 4',serif; font-size:1rem; font-style:italic; color:#5C7A6A; margin-bottom:2rem; line-height:1.6;">Revising the mind's predictions.</p>
+
+    <div style="font-family:'Source Serif 4',serif; font-size:1.05rem; line-height:1.95; color:#2D4A3E;">
+
+      <p style="margin-bottom:1.4rem;">Human experience is shaped not only by events themselves, but by the meanings we assign to them. Between what happens and how we feel lies a process of interpretation. Cognitive appraisal refers to these subjective interpretations through which individuals make sense of the world around them. In many ways, emotions arise not directly from events, but from the significance the mind attributes to those events.</p>
+
+      <p style="margin-bottom:1.4rem;">Cognitive reappraisal represents the ability to revisit those initial interpretations and consider alternative perspectives. Rather than reacting automatically, individuals can examine their assumptions, reflect on different possibilities, and revise their understanding of a situation. In doing so, emotions themselves may change, not because reality has changed, but because the meaning attached to it has.</p>
+
+      <p style="margin-bottom:1.4rem;">From the perspective of predictive processing, this process resembles a form of error correction. The brain continuously generates predictions about the world, ourselves, and other people. When experience conflicts with these expectations, prediction errors emerge. Metacognition — the ability to think about one's own thinking — allows these mismatches to become conscious. Cognitive reappraisal can then serve as a deliberate mechanism for updating the beliefs and interpretations that gave rise to the emotional response.</p>
+
+      <p style="margin-bottom:2rem;">Thus, emotional regulation may not simply involve controlling feelings, but revising the predictions and meanings from which those feelings emerge. Learning, adaptation, and psychological growth may all depend upon this continual process of prediction, reflection, and correction.</p>
+
+      <div style="border-top:1px solid #E2DDD5; padding-top:1.5rem; margin-top:0.5rem;">
+        <p style="font-family:'Inter',sans-serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:#C8A96E; margin-bottom:0.75rem;">Footnote</p>
+        <p style="font-size:0.95rem; color:#5C7A6A; line-height:1.85; font-style:italic;">Negative interpretations often feel self-evident, yet they may represent deeply learned predictions rather than objective truths. Through metacognition and cognitive reappraisal, individuals become capable of questioning these assumptions and gradually updating them. In this sense, growth is not the absence of error, but the willingness to correct it.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     CONTACT PAGE
+═══════════════════════════════════════ -->
+<div class="page" data-page="contact">
+  <div class="container">
+    <div class="page-header">
+      <div class="page-header__label">Contact</div>
+      <h1 class="page-header__title">Let's think together.</h1>
+      <p class="page-header__subtitle">"Conversation is one way we discover ourselves."</p>
+    </div>
+
+    <div style="max-width: 560px; padding-bottom: var(--sp-5xl);">
+      <div class="prose reveal" style="margin-bottom:var(--sp-2xl);">
+        <p>I'm always glad to hear from people who are curious about the same things — mind, meaning, consciousness, the strange fact of being alive. Whether you want to discuss an essay, share a book recommendation, or just say something that needed to be said: write to me.</p>
+      </div>
+
+      <div class="reveal">
+        <span class="section__label" style="margin-bottom:var(--sp-sm); display:block;">Email</span>
+        <a href="mailto:arman.beautifullyunwell@gmail.com" style="font-family:var(--f-serif); font-size:var(--t-lg); color:var(--c-accent); border-bottom:1px solid var(--c-accent); padding-bottom:2px;">
+          arman.beautifullyunwell@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer__quote reveal">
+      "We become ourselves by questioning<br>the stories our minds tell us."
+    </div>
+    <div class="footer__bottom" style="flex-direction:column; align-items:flex-start; gap:var(--sp-lg);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; width:100%;">
+        <div>
+          <div class="footer__brand-name">Beautifully Unwell</div>
+          <div class="footer__brand-tagline">by Arman Sinha · Exploring mind, behavior, and cognition.</div>
+        </div>
+        <div class="footer__links">
+          <a class="footer__link" href="#" data-page="home">Home</a>
+          <a class="footer__link" href="#" data-page="archive">Archive</a>
+          <a class="footer__link" href="#" data-page="poems">Poems</a>
+          <a class="footer__link" href="#" data-page="videos">Videos</a>
+          <a class="footer__link" href="#" data-page="contact">Contact</a>
+        </div>
+      </div>
+      <div style="width:100%; border-top:1px solid rgba(250,247,242,0.08); padding-top:var(--sp-md);">
+        <div style="font-family:var(--f-sans); font-size:var(--t-xs); opacity:0.35; letter-spacing:0.06em; color:var(--c-paper);">
+          © 2026 Arman Sinha. All rights reserved. All poems, essays, and written content on this website are the original work of Arman Sinha and may not be reproduced, distributed, or used without explicit written permission.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ PROTECTION ═══ -->
+
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
